@@ -10,7 +10,8 @@ function getTotalAccountsCount(accounts=[]) {
 
 //d2//returns a number that represents the number of books that are currently checked out of the library. This number can be found by looking at the first transaction object in the borrows array of each book. If the transaction says the book has not been returned (i.e. returned: false), the book is currently being borrowed.
 function getBooksBorrowedCount(books=[]) {
-
+  let borrowed = books.filter((book)=>book.borrows.some((borrow)=>borrow.returned === false))
+  return borrowed.length
 }
 
 

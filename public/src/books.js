@@ -30,7 +30,7 @@ let result = borrows.map((borrower)=>{
   foundBorrower.returned = borrower.returned
   return foundBorrower
   })
-return result.filter((item,idx)=>idx < 10)
+return result.slice(0, 10)
 }
 
 module.exports = {
